@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>AdonisJS Crash Course</title>
+</head>
+<body>
+  <nav class="w-full bg-white shadow-md border flex justify-center px-4 py-2">
+    <div class="w-1/2 flex justify-between">
+      <h1 class="text-xl font-semibold">
+        <a href="/">Adonisgram</a>
+      </h1>
+      <div>
+        @if(auth.isAuthenticated)
+          <a href="{{auth.user.username}}">
+            <img src="{{auth.user != undefined ? auth.user.avatar : 'https://i2.wp.com/aumentada.net/wp-content/uploads/2015/05/user.png?ssl=1'}}" class="h-8 w-8 rounded-full border" alt="profile">
+          </a>
+        @endif
+      </div>
+    </div>
+  </nav>
+  <div class="bg-gray-100 min-h-screen flex justify-center">
+    <div class="w-full md:w-1/2">
+      @section('content')
+      @endsection
+    </div>
+  </div>
+
+</body>
+</html>
